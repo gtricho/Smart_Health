@@ -8,7 +8,6 @@ import ketai.net.nfc.record.*;
 import ketai.net.wifidirect.*;
 import ketai.sensors.*;
 import ketai.ui.*;
-//import http.requests.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,26 +46,10 @@ public void network(){
 {
         public void run() 
     {
-  //  String Fall, Any;
+  
       try
         {
-//    GetRequest get = new GetRequest("http://"+"gtricho.dideles.gr?Fall=1");
-  //  get.addUser("ekpthem477031","Arn@k1Aspr0");
-//    get.addHeader("Content-Type", "application/json");
-//    get.send();
-//  println("Reponse Content: " + get.getContent());
-//  println("Reponse Content-Length Header: " + get.getHeader("Content-Length"));
-  //     Fall="F";
-  //     Any="1";
-  //     PostRequest post = new PostRequest("http://gtricho.dideles.gr");
-  //     println(Fall);
-  //     post.addUser("ekpthem477031", "Arn@k1Aspr0");    
-  //     post.addData("Fall", "Any");
-  //     post.addHeader("Content-Type", "application/json");
-  //     post.send();
-  //     println("Reponse Content: " + post.getContent());
-  //     println("Reponse Content-Length Header: " + post.getHeader("Content-Length"));
-   //get message from message box
+
 int d = day();    // Values from 1 - 31
 int m = month();  // Values from 1 - 12
 int y = year();   // 2003, 2004, 2005, etc.
@@ -84,7 +67,7 @@ String xronos=ores+":"+lepta+":"+deft;
             //check whether the msg empty or not
             if(msg.length()>0) {
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://gtricho.dideles.gr/index.php");
+                HttpPost httppost = new HttpPost("http://your web site index page");
                  
                 try {
                     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
@@ -129,7 +112,7 @@ void onAccelerometerEvent(float x, float y, float z)
 {
  
    accelerometer.set(x, y, z);
-   if ((x>10) || (y>10) || (z>15)) {
+   if ((x>10) || (y>10) || (z>18)) {
     println("Possible Fall Detection");
     sensor.stop();
     network();   
